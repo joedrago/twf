@@ -1,0 +1,18 @@
+{
+  "name": "twf",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "rebuild": "coffee -w -c -m -j server.js -o lib src/config.coffee src/server.coffee",
+    "start": "nodemon lib/server.js"
+  },
+  "dependencies": {
+    "connect-flash": "*",
+    "express": "3.1.0",
+    "mongodb": "*",
+    "nodemon": "*",
+    "passport": "*",
+    "passport-local": "*",
+    "mongoose": "~3.6.4"
+  }
+}
