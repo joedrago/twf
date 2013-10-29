@@ -7,6 +7,7 @@ files = [
 ]
 
 option '-w', '--watch', 'watch for changes and rebuild/rerun accordingly'
+option '-p', '--port [PORT]', 'dev server port'
 
 coffeeName = 'coffee'
 nodemonName = 'nodemon'
@@ -22,7 +23,7 @@ task 'build', 'build library', (options) ->
     coffee.stderr.on 'data', (data) -> console.log data.toString().trim()
 
 task 'dev', 'dev server, watching for build changes', (options) ->
-    console.log nodemonName
+    process.env['PORT'] = options.port ? 3000
     coffee = spawn nodemonName, ['-w', 'lib', 'lib/server.js']
     coffee.stdout.on 'data', (data) -> console.log data.toString().trim()
     coffee.stderr.on 'data', (data) -> console.log data.toString().trim()
