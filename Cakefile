@@ -10,7 +10,7 @@ option '-w', '--watch', 'watch for changes and rebuild/rerun accordingly'
 option '-p', '--port [PORT]', 'dev server port'
 
 coffeeName = 'coffee'
-nodemonName = 'nodemon'
+nodemonName = './node_modules/.bin/nodemon'
 
 # This is really stupid
 if process.platform == 'win32'
